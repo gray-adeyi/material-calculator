@@ -3,10 +3,22 @@
   --text-color: #2e1409ff;
   --num-key-bg: #f9eef3ff;
   --display-bg: #f1d9e1ff;
+  /* --menu-bg: rgba(241, 217, 225, 0.793); */
+  --menu-bg: green;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
