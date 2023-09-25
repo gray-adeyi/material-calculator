@@ -17,25 +17,27 @@ const showAdditionalSpecialFunc = ref(false);
       menu
     </button>
   </div>
-  <div
-    v-if="showAdditionalSpecialFunc"
-    class="additional-special-func-container"
-  >
-    <div class="group-1">
-      <button class="special-func-btn">DEG</button>
-      <button class="special-func-btn">sin</button>
-      <button class="special-func-btn">cos</button>
-      <button class="special-func-btn">tan</button>
-      <button class="special-func-btn"></button>
+  <Transition name="fade">
+    <div
+      v-if="showAdditionalSpecialFunc"
+      class="additional-special-func-container"
+    >
+      <div class="group-1">
+        <button class="special-func-btn">DEG</button>
+        <button class="special-func-btn">sin</button>
+        <button class="special-func-btn">cos</button>
+        <button class="special-func-btn">tan</button>
+        <button class="special-func-btn"></button>
+      </div>
+      <div class="group-2">
+        <button class="special-func-btn">INV</button>
+        <button class="special-func-btn">e</button>
+        <button class="special-func-btn">ln</button>
+        <button class="special-func-btn">log</button>
+        <button class="special-func-btn"></button>
+      </div>
     </div>
-    <div class="group-2">
-      <button class="special-func-btn">INV</button>
-      <button class="special-func-btn">e</button>
-      <button class="special-func-btn">ln</button>
-      <button class="special-func-btn">log</button>
-      <button class="special-func-btn"></button>
-    </div>
-  </div>
+  </Transition>
 </template>
 
 <style lang="scss" scoped>
