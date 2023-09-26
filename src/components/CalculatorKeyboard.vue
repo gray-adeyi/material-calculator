@@ -1,36 +1,42 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useCalculatorStore } from "../store";
+
+const calculator = useCalculatorStore();
+</script>
 
 <template>
   <div class="keyboard-container">
     <div class="keyboard-row-container">
-      <button class="btn">AC</button>
-      <button class="btn">()</button>
-      <button class="btn">%</button>
-      <button class="btn">÷</button>
+      <button class="btn" @click="calculator.clear()">AC</button>
+      <button class="btn" @click="calculator.addEntry(calculator.nextParen())">
+        ()
+      </button>
+      <button class="btn" @click="calculator.addEntry('%')">%</button>
+      <button class="btn" @click="calculator.addEntry('÷')">÷</button>
     </div>
     <div class="keyboard-row-container">
-      <button class="btn">7</button>
-      <button class="btn">8</button>
-      <button class="btn">9</button>
-      <button class="btn">×</button>
+      <button class="btn" @click="calculator.addEntry('7')">7</button>
+      <button class="btn" @click="calculator.addEntry('8')">8</button>
+      <button class="btn" @click="calculator.addEntry('9')">9</button>
+      <button class="btn" @click="calculator.addEntry('×')">×</button>
     </div>
     <div class="keyboard-row-container">
-      <button class="btn">4</button>
-      <button class="btn">5</button>
-      <button class="btn">6</button>
+      <button class="btn" @click="calculator.addEntry('4')">4</button>
+      <button class="btn" @click="calculator.addEntry('5')">5</button>
+      <button class="btn" @click="calculator.addEntry('6')">6</button>
       <button class="btn">⁻</button>
     </div>
     <div class="keyboard-row-container">
-      <button class="btn">1</button>
-      <button class="btn">2</button>
-      <button class="btn">3</button>
-      <button class="btn">+</button>
+      <button class="btn" @click="calculator.addEntry('1')">1</button>
+      <button class="btn" @click="calculator.addEntry('2')">2</button>
+      <button class="btn" @click="calculator.addEntry('3')">3</button>
+      <button class="btn" @click="calculator.addEntry('+')">+</button>
     </div>
     <div class="keyboard-row-container">
-      <button class="btn">0</button>
-      <button class="btn">.</button>
-      <button class="btn">bks</button>
-      <button class="btn">=</button>
+      <button class="btn" @click="calculator.addEntry('0')">0</button>
+      <button class="btn" @click="calculator.addEntry('.')">.</button>
+      <button class="btn" @click="calculator.backspace()">bks</button>
+      <button class="btn" @click="calculator.evaluate()">=</button>
     </div>
   </div>
 </template>
