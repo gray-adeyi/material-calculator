@@ -1,12 +1,15 @@
 <script lang="ts" setup>
 import DisplayCursor from "./DisplayCursor.vue";
 import BaseEntry from "./BaseEntry.vue";
+import { useCalculatorStore } from "../store";
+
+const calculator = useCalculatorStore();
 </script>
 
 <template>
   <div class="entry-container">
     <DisplayCursor :blink-rate="1000" />
-    <BaseEntry class="expression-text" value="2X5" />
+    <BaseEntry class="expression-text" :value="calculator.expression" />
   </div>
 </template>
 
