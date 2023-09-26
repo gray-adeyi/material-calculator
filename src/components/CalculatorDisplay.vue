@@ -2,13 +2,16 @@
 import CalculatorEntry from "./CalculatorEntry.vue";
 import CalculatorMenu from "./CalculatorMenu.vue";
 import BaseEntry from "./BaseEntry.vue";
+import { useCalculatorStore } from "../store";
+
+const calculator = useCalculatorStore();
 </script>
 
 <template>
   <div class="display-container">
     <CalculatorMenu />
     <CalculatorEntry />
-    <BaseEntry class="answer-text" value="10" />
+    <BaseEntry class="answer-text" :value="calculator.answer" />
   </div>
 </template>
 
