@@ -2,14 +2,25 @@
 import { ref } from "vue";
 
 const showAdditionalSpecialFunc = ref(false);
+import { useCalculatorStore } from "../store";
+
+const calculator = useCalculatorStore();
 </script>
 
 <template>
   <div class="special-func-container">
-    <button class="special-func-btn">√</button>
-    <button class="special-func-btn">π</button>
-    <button class="special-func-btn">‸</button>
-    <button class="special-func-btn">!</button>
+    <button class="special-func-btn" @click="calculator.addEntry('√')">
+      √
+    </button>
+    <button class="special-func-btn" @click="calculator.addEntry('π')">
+      π
+    </button>
+    <button class="special-func-btn" @click="calculator.addEntry('^')">
+      ^
+    </button>
+    <button class="special-func-btn" @click="calculator.addEntry('!')">
+      !
+    </button>
     <button
       class="menu-btn"
       @click="() => (showAdditionalSpecialFunc = !showAdditionalSpecialFunc)"
